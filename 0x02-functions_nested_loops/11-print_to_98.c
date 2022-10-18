@@ -2,7 +2,8 @@
 #include "6-abs.c"
 #include <stdio.h>
 /**
- * main - check the code
+ * print_to_98 - prints to 98
+ * @n : integer
  *
  * Return: Always 0.
  */
