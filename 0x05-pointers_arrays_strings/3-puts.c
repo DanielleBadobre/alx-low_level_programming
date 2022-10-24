@@ -1,15 +1,17 @@
 #include "main.h"
+#include "2-strlen.c"
 /**
- * _strlen - gets character string
+ * _puts - puts a string
  *
- * @s: character to getstring
- * Return: returns length
+ * @str: string to print
  */
-int _strlen(char *s)
+void _puts(char *str)
 {
 	int i;
 
-	for (i = 0; s[i] != '\0'; i++)
-	{}
-	return (i);
+	for (i = 0; *(str + i) != '\0'; i++)
+	{
+		_putchar(*(str + i));
+	}
+	_putchar('\n');
 }
