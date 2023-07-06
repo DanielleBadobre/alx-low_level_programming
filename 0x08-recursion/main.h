@@ -11,4 +11,5 @@ int is_palindrome(char *s);
 int wildcmp(char *s1, char *s2);
 int _putchar(char c);
 int guessing(int n, int guess);
+int multiple(int n, int guess);
 #endif
