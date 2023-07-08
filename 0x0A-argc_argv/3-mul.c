@@ -5,7 +5,7 @@
  * main - multiplies 2 numbers
  * @argc: arc
  * @argv: argv
- * return: 0 on success, 1 on error
+ * Return: 0 on success, 1 on error
  */
 
 int main(int argc, char *argv[])
