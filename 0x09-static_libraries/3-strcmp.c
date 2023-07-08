@@ -1,12 +1,12 @@
 #include "main.h"
 /**
- * _strspn - prints the consecutive caracters of s1 that are in s2.
- * @s: source string
- * @accept: searching string
+ * _strcmp - prints the consecutive caracters of s1 that are in s2.
+ * @s1: source string
+ * @s2: searching string
  *
  * Return: new string.
  */
-unsigned int _strspn(char *s, char *accept)
+int _strcmp(char *s1, char *s2)
 {
 	unsigned int i, j;
 
