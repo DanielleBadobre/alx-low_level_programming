@@ -41,7 +41,7 @@ int countChars(char *str)
 	{
 		if (*str != ' ')
 		{
-			if (*(str + 1) != ' ' || *(str +1) != '\0')
+			if (*(str + 1) != ' ' || *(str + 1) != '\0')
 				chars++;
 			str++;
 		}
@@ -92,8 +92,7 @@ char **strtow(char *str)
 			for (j = 0; j < numChars; j++)
 			{
 				*(*(words + i) + j) = *str;
-				str++;
-			}
+				str++;}
 			*(*(words + i) + j) = '\0';
 			i++;
 		}
