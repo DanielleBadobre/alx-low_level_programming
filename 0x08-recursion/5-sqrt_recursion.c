@@ -20,15 +20,15 @@ int _sqrt_recursion(int n)
  * guessing - guesses the square root
  * @n: number to guess
  * @i: guess
+ * Return: square guess
  */
 
 int guessing(int n, int i)
 {
 	if (i * i == n)
 		return (i);
+	if (i * i > n)
+		return (-1);
 	else
-		if (i * i > n)
-			return (-1);
-	else
-		return (guessing(n, i + 1));	
+		return (guessing(n, i + 1));
 }
