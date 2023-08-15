@@ -1,11 +1,10 @@
-#include "main.h"
+#include <stdio.h>
+/**
+ * main - print name of file
+ * Return: 0
+ */
 int main(void)
 {
-	char *name = __BASE_FILE__;
-	int i;
-
-	for (i = 0; name[i] != '0'; i++)
-		_putchar(name[i]);
-	_putchar('\n');
+	printf("%s\n", __FILE__);
 	return (0);
 }
