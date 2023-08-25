@@ -14,7 +14,7 @@ int _strlen(const char *s)
 }
 /**
  * add_node_end - well
- * @head - wee
+ * @head: wee
  * @str: str
  * Return: num node
  */
