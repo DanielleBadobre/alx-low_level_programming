@@ -32,6 +32,6 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 	else
 		for (m = 0; m < n; m++)
 			concat[x + m] = s2[m];
+	concat[x + m] = '\0';
 	return (concat);
-	free(concat);
 }
