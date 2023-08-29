@@ -7,10 +7,9 @@
 size_t listint_len(const listint_t *h)
 {
 	size_t i;
+	const listint_t *temp = h;
 
-	if (!h)
-		return (0);
-	for (i = 0; h; i++)
-		h = h->next;
+	for (i = 0; temp; i++)
+		temp = temp->next;
 	return (i);
 }
