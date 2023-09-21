@@ -8,38 +8,38 @@
  */
 int main(int argc, char **argv)
 {
-	int src, dest;
+	int file_from, file_to;
 	unsigned long int taille;
 	char *conteneur;
 
 	if (argc != 3)
 	{
-		dprintf(STDERR_FILENO, "Usage: cp src dest\n");
+		dprintf(STDERR_FILENO, "Usage: cp src file_to\n");
 		exit(97);
 	}
-	src = open(argv[1], O_RDONLY);
-	if (src == -1)
+	file_from = open(argv[1], O_RDONLY);
+	if (file_from == -1)
 	{
 		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", argv[0]);
 		exit(98);
 	}
-	dest = open(argv[2], O_WRONLY | O_CREAT | O_TRUNC | O_APPEND, 0664);
-	if (dest == -1)
+	file_to = open(argv[2], O_WRONLY | O_CREAT | O_TRUNC | O_APPEND, 0664);
+	if (file_to == -1)
 	{
 		dprintf(STDERR_FILENO, "Error: Can't write to %s\n", argv[1]);
 		exit(99);
 	}
 	conteneur = malloc(1024);
-	while ((taille = read(src, conteneur, sizeof(conteneur))) != 0)
-		write(dest, conteneur, taille);
-	if (close(src) == -1)
+	while ((taille = read(file_from, conteneur, sizeof(conteneur))) != 0)
+		write(file_to, conteneur, taille);
+	if (close(file_from) == -1)
 	{
-		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", src);
+		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", file_from);
 		exit(99);
 	}
-	if (close(dest) == -1)
+	if (close(file_to) == -1)
 	{
-		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", dest);
+		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", file_to);
 		exit(99);
 	}
 	free(conteneur);
