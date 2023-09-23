@@ -45,7 +45,7 @@ void print_magi(unsigned char *e_ident)
 {
 	int inde;
 
-	printf(" Magic: ");
+	printf("  Magic:   ");
 	for (inde = 0; inde < EI_NIDENT; inde++)
 	{
 		printf("%02x", e_ident[inde]);
@@ -61,7 +61,7 @@ void print_magi(unsigned char *e_ident)
  */
 void print_clas(unsigned char *e_ident)
 {
-	printf(" Class:			");
+	printf("  Class:                             ");
 	switch (e_ident[EI_CLASS])
 	{
 		case ELFCLASSNONE:
@@ -83,7 +83,7 @@ void print_clas(unsigned char *e_ident)
  */
 void print_dat(unsigned char *e_ident)
 {
-	printf(" DATA		");
+	printf("  Data:                              ");
 	switch (e_ident[EI_DATA])
 	{
 		case ELFDATANONE:
@@ -105,7 +105,7 @@ void print_dat(unsigned char *e_ident)
  */
 void print_versio(unsigned char *e_ident)
 {
-	printf(" version:		%d", e_ident[EI_VERSION]);
+	printf("  Version:                           %d", e_ident[EI_VERSION]);
 	switch (e_ident[EI_VERSION])
 	{
 		case EV_CURRENT:
@@ -122,7 +122,7 @@ void print_versio(unsigned char *e_ident)
  */
 void print_osab(unsigned char *e_ident)
 {
-	printf(" OS/ABI:		");
+	printf("  OS/ABI:                            ");
 	switch (e_ident[EI_OSABI])
 	{
 	case ELFOSABI_NONE:
@@ -163,9 +163,9 @@ void print_osab(unsigned char *e_ident)
  * print_ab - prints abi
  * @e_ident: pointer
  */
-void print_ab(unsigned char *e_iden)
+void print_ab(unsigned char *e_ident)
 {
-	printf(" ABI Version:			%d\n", e_iden[EI_ABIVERSION]);
+	printf("  ABI Version:                       %d\n", e_iden[EI_ABIVERSION]);
 }
 /**
  * print_typ - prints type
@@ -176,7 +176,7 @@ void print_typ(unsigned int e_type, unsigned char *e_ident)
 {
 	if (e_ident[EI_DATA] == ELFDATA2MSB)
 		e_type >>= 8;
-	printf(" Type:			");
+	printf("  Type:                              ");
 	switch (e_type)
 	{
 		case ET_NONE:
@@ -205,7 +205,7 @@ void print_typ(unsigned int e_type, unsigned char *e_ident)
  */
 void print_entr(unsigned long int e_entry, unsigned char *e_ident)
 {
-	printf(" Entry point adress:		");
+	printf("  Entry point address:               ");
 	if (e_ident[EI_DATA] == ELFDATA2MSB)
 	{
 		e_entry = ((e_entry << 8) & 0xFF00FF00) |
@@ -236,7 +236,7 @@ void close_el(int el)
  * Return: 0
  */
 int main(int __attribute__((__unused__))argc, char *argv[])
-{	
+{
 	Elf64_Ehdr *head;
 	int a, s;
 
