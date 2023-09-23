@@ -165,7 +165,7 @@ void print_osab(unsigned char *e_ident)
  */
 void print_ab(unsigned char *e_ident)
 {
-	printf("  ABI Version:                       %d\n", e_iden[EI_ABIVERSION]);
+	printf("  ABI Version:                       %d\n", e_ident[EI_ABIVERSION]);
 }
 /**
  * print_typ - prints type
